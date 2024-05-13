@@ -1,6 +1,7 @@
 package com.paredgames.aijyakaeserver.service;
 
 import com.paredgames.aijyakaeserver.dto.BoardDTO;
+import com.paredgames.aijyakaeserver.dto.BoardInsertRequestDTO;
 import com.paredgames.aijyakaeserver.entity.Board;
 import com.paredgames.aijyakaeserver.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,18 +24,21 @@ public class BoardService {
     private final BoardRepository boardRepository;
     private final Logger logger = LoggerFactory.getLogger(getClass());
     private final Integer DEFAULT_PAGE_SIZE=20;
-    public ResponseEntity<BoardDTO> uploadImg(BoardDTO boardDTO){
+    public ResponseEntity<BoardDTO> uploadImg(BoardInsertRequestDTO boardInsertRequestDTO){
         //TODO: 검증로직
 
-        Board board = Board.toEntity(boardDTO);
+        //TODO: aws s3에 이미지 업로드
+
+
+        Board board = Board.toEntity(boardInsertRequestDTO);
         boardRepository.save(board);
 
-        return ResponseEntity.ok(boardDTO);
+        return ResponseEntity.ok(BoardDTO.toDTO(board));
     }
 
     public ResponseEntity<List<BoardDTO>> getBoardList(int page){
         PageRequest pageRequest = PageRequest.of(page,DEFAULT_PAGE_SIZE);
-        Page<Board> res= boardRepository.findBoardPage(pageRequest);
+        Page<Board> res= boardRepository.findAll(pageRequest);
         List<BoardDTO> boardList = new ArrayList<>();
         for(Board board:res){
             boardList.add(BoardDTO.toDTO(board));

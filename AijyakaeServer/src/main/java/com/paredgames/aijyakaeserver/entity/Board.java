@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.net.URI;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -46,5 +44,6 @@ public class Board {
                 .userName(boardDTO.getUserName())
                 .build();
     }
+
 }
 
