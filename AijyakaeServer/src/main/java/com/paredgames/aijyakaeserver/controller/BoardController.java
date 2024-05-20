@@ -25,7 +25,7 @@ public class BoardController {
     }
 
     @GetMapping("/api/v1/get-board-list")
-    public ResponseEntity<List<BoardDTO>> getBoardList(int page){
+    public ResponseEntity<List<BoardDTO>> getBoardList(@RequestBody int page){
         return boardService.getBoardList(page);
     }
 
