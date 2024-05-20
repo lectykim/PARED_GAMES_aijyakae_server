@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 public class BoardDTO {
 
     private Long id;
+    private String fileId;
     private String prompt;
     private String negativePrompt;
     private String userName;
@@ -22,6 +23,7 @@ public class BoardDTO {
     public static BoardDTO toDTO(Board board){
         return BoardDTO.builder()
                 .id(board.getId())
+                .fileId(board.getFileId())
                 .prompt(board.getPrompt())
                 .negativePrompt(board.getNegativePrompt())
                 .userName(board.getUserName())

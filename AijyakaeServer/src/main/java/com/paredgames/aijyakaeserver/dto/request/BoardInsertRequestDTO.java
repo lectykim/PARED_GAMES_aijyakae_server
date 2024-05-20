@@ -1,4 +1,4 @@
-package com.paredgames.aijyakaeserver.dto;
+package com.paredgames.aijyakaeserver.dto.request;
 
 import lombok.*;
 
@@ -8,6 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class BoardInsertRequestDTO {
+    private String id;
     private String prompt;
     private String negativePrompt;
     private String userName;

@@ -1,7 +1,8 @@
-package com.paredgames.aijyakaeserver.dto;
+package com.paredgames.aijyakaeserver.dto.response;
 
 import lombok.*;
 
+/*
 @Getter
 @Setter
 @NoArgsConstructor
@@ -11,3 +12,4 @@ public class BoardInsertResponseDTO {
 
 
 }
+*/

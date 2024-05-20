@@ -21,6 +21,9 @@ public class Board {
     private Long id;
 
     @Column(nullable = false)
+    private String fileId;
+
+    @Column(nullable = false)
     private String prompt;
 
     @Column(nullable = false)
@@ -38,6 +41,7 @@ public class Board {
 
     public static Board toEntity(BoardDTO boardDTO){
         return Board.builder()
+                .fileId(boardDTO.getFileId())
                 .prompt(boardDTO.getPrompt())
                 .negativePrompt(boardDTO.getNegativePrompt())
                 .s3Url(boardDTO.getS3Url())
