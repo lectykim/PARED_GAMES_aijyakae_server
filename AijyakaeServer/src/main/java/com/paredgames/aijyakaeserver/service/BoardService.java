@@ -35,8 +35,6 @@ public class BoardService {
     private final String BUCKET_NAME="paredgamesaijyakaebucket";
     public ResponseEntity<BoardDTO> uploadImg(BoardInsertRequestDTO boardInsertRequestDTO){
 
-        //TODO: aws s3에 이미지 업로드
-
         byte[] image = Base64.decodeBase64(boardInsertRequestDTO.getImageBase64());
 
         InputStream inputStream = new ByteArrayInputStream(image);

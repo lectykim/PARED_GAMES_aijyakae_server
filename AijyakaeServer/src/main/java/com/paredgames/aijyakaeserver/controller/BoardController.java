@@ -6,10 +6,7 @@ import com.paredgames.aijyakaeserver.dto.request.BoardInsertRequestDTO;
 import com.paredgames.aijyakaeserver.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,7 @@ public class BoardController {
     }
 
     @GetMapping("/api/v1/get-board-list")
-    public ResponseEntity<List<BoardDTO>> getBoardList(@RequestBody int page){
+    public ResponseEntity<List<BoardDTO>> getBoardList(@RequestParam int page){
         return boardService.getBoardList(page);
     }
 
