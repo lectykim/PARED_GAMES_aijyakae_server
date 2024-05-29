@@ -65,7 +65,7 @@ public class BoardService {
 
     public ResponseEntity<List<BoardDTO>> getBoardList(int page){
         PageRequest pageRequest = PageRequest.of(page,DEFAULT_PAGE_SIZE);
-        Page<Board> res= boardRepository.findAll(pageRequest);
+        Page<Board> res= boardRepository.findAllByOrderByIdDesc(pageRequest);
         List<BoardDTO> boardList = new ArrayList<>();
         for(Board board:res){
             boardList.add(BoardDTO.toDTO(board));
