@@ -54,6 +54,8 @@ public class BoardService {
         boardDTO.setS3Url(s3Url);
         boardDTO.setUserName(boardInsertRequestDTO.getUserName());
         boardDTO.setNegativePrompt(boardInsertRequestDTO.getNegativePrompt());
+        boardDTO.setWidth(boardInsertRequestDTO.getWidth());
+        boardDTO.setHeight(boardInsertRequestDTO.getHeight());
 
         Board board = Board.toEntity(boardDTO);
         boardRepository.save(board);
