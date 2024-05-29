@@ -21,6 +21,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -68,6 +69,11 @@ public class BoardService {
             boardList.add(BoardDTO.toDTO(board));
         }
         return ResponseEntity.ok(boardList);
+    }
+
+    public ResponseEntity<BoardDTO> getBoardItem(String id){
+        Optional<Board> board = boardRepository.findById(Long.parseLong(id));
+        return board.map(value -> ResponseEntity.ok(BoardDTO.toDTO(value))).orElseGet(() -> ResponseEntity.ok(null));
     }
 
 }

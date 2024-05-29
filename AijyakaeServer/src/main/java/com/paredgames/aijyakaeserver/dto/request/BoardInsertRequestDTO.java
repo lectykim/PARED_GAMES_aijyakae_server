@@ -13,4 +13,6 @@ public class BoardInsertRequestDTO {
     private String negativePrompt;
     private String userName;
     private String imageBase64;
+    private Long width;
+    private Long height;
 }

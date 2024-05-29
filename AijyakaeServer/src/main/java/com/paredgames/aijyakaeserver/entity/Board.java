@@ -40,6 +40,12 @@ public class Board {
     @CreatedDate
     private LocalDateTime createdDateTime;
 
+    @Column(nullable = false)
+    private Long width;
+
+    @Column(nullable = false)
+    private Long height;
+
 
     public static Board toEntity(BoardDTO boardDTO){
         return Board.builder()
@@ -48,6 +54,8 @@ public class Board {
                 .negativePrompt(boardDTO.getNegativePrompt())
                 .s3Url(boardDTO.getS3Url())
                 .userName(boardDTO.getUserName())
+                .width(boardDTO.getWidth())
+                .height(boardDTO.getHeight())
                 .build();
     }
 

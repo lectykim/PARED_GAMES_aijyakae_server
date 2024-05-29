@@ -26,4 +26,9 @@ public class BoardController {
         return boardService.getBoardList(page);
     }
 
+    @GetMapping("api/v1/get-board-item/{id}")
+    public ResponseEntity<BoardDTO> getBoardItem(@PathVariable String id){
+        return boardService.getBoardItem(id);
+    }
+
 }

@@ -19,6 +19,8 @@ public class BoardDTO {
     private String userName;
     private String s3Url;
     private LocalDateTime createdDateTime;
+    private Long width;
+    private Long height;
 
     public static BoardDTO toDTO(Board board){
         return BoardDTO.builder()
@@ -29,6 +31,8 @@ public class BoardDTO {
                 .userName(board.getUserName())
                 .s3Url(board.getS3Url())
                 .createdDateTime(board.getCreatedDateTime())
+                .width(board.getWidth())
+                .height(board.getHeight())
                 .build();
     }
 }
