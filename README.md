@@ -9,8 +9,3 @@ AWS를 활용하여 이를 직접 배포해본 경험이 의미있는 레포지�
 
 ![Aijyakae-Architecture](https://github.com/user-attachments/assets/6c9b1a87-7735-453e-9241-5795638c22ba)
 
-
-## Front-End
-
-https://github.com/lectykim/PARED_GAMES_aijyakae
-
